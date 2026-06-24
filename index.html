@@ -585,6 +585,105 @@
       letter-spacing: 0.02em;
     }
 
+    /* Policy Communication Section */
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      padding-top: 24px;
+    }
+    .policy-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .policy-visual {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 9 / 16;
+      max-height: 560px;
+      background: #EAE7E0;
+    }
+    .policy-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .policy-visual:hover img {
+      transform: scale(1.03);
+    }
+    .policy-visual::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.18);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .policy-visual:hover::after {
+      opacity: 1;
+    }
+    .policy-info {
+      padding: 1.2rem 0 0;
+    }
+    .policy-info .project-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .policy-info h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 600;
+      color: var(--text);
+      margin: 0.5rem 0 0.6rem;
+      line-height: 1.35;
+    }
+    .policy-meta {
+      font-size: 0.8125rem;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+    }
+    .policy-meta span {
+      display: block;
+      line-height: 1.6;
+    }
+    .policy-meta strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+    .policy-desc {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+    }
+    .policy-kw {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    .policy-kw span {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 12px;
+    }
+
     /* Archive Section Descriptions */
     .archive-section-desc {
       font-size: 0.875rem;
@@ -1295,6 +1394,7 @@
       .project-meta-row { flex-direction: column; gap: 0.75rem; }
       .project-desc { font-size: 0.8125rem; }
       .project-kw span { font-size: 0.5625rem; }
+      .policy-grid { grid-template-columns: 1fr; gap: 36px; }
     }
 
     @media (max-width: 480px) {
@@ -1302,6 +1402,7 @@
       .hero-name-en { font-size: 1.2rem; }
       .hero-subtitle { font-size: 0.9rem; }
       .poster-item { width: 78vw; }
+      .policy-visual { max-height: 420px; }
     }
   </style>
 </head>
@@ -1314,6 +1415,7 @@
     <a href="#" class="nav-logo">XXY</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#projects">Selected Projects</a></li>
+      <li><a href="#policy">Policy News</a></li>
       <li><a href="#archive">Visual Archive</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
@@ -1505,6 +1607,65 @@
         <button class="view-btn" data-modal-trigger="psychodrama-modal">
           查看视频 <span class="arrow">→</span>
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       POLICY COMMUNICATION
+       ========================================================== -->
+  <section class="section" id="policy">
+    <div class="content-wrap">
+      <div class="reveal">
+        <span class="section-label">Policy Communication</span>
+        <h2>十五五政策解读</h2>
+        <p class="archive-section-desc">围绕"十五五"规划选题，为云南广播电视台新闻频率制作的政策解读系列报道视频。通过信息可视化与节奏化剪辑，将宏观政策转化为易于传播的新闻视听内容。</p>
+      </div>
+
+      <div class="policy-grid reveal reveal-d1">
+        <!-- Video 01 -->
+        <div class="policy-card">
+          <div class="policy-visual" data-modal-trigger="tutechan-modal">
+            <img src="thumb-做好土特产大文章.jpg" alt="做好土特产大文章" loading="lazy">
+          </div>
+          <div class="policy-info">
+            <span class="project-num">Policy News 01</span>
+            <h3>做好"土特产"大文章<br>加快农业农村现代化</h3>
+            <div class="policy-meta">
+              <span><strong>Project Type</strong> &nbsp; 新闻视频 · 政策解读</span>
+              <span><strong>Role</strong> &nbsp; 剪辑包装</span>
+            </div>
+            <p class="policy-desc">围绕"十五五"农业农村现代化发展，解读"土特产"产业发展路径。通过数据可视化与关键信息提炼，将宏观政策转化为清晰的新闻解读视频。</p>
+            <div class="policy-kw">
+              <span>Policy News</span><span>Rural Development</span><span>Data Visualization</span>
+            </div>
+            <button class="view-btn" data-modal-trigger="tutechan-modal">
+              查看视频 <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 02 -->
+        <div class="policy-card">
+          <div class="policy-visual" data-modal-trigger="huiminsheng-modal">
+            <img src="thumb-惠民生 促消费.jpg" alt="惠民生 促消费" loading="lazy">
+          </div>
+          <div class="policy-info">
+            <span class="project-num">Policy News 02</span>
+            <h3>惠民生 促消费</h3>
+            <div class="policy-meta">
+              <span><strong>Project Type</strong> &nbsp; 新闻视频 · 政策解读</span>
+              <span><strong>Role</strong> &nbsp; 剪辑包装</span>
+            </div>
+            <p class="policy-desc">聚焦"十五五"民生保障与消费促进政策，以民生视角切入。通过条理清晰的信息架构与动态视觉呈现，增强政策传播的亲和力与可理解性。</p>
+            <div class="policy-kw">
+              <span>Policy News</span><span>Livelihood</span><span>Consumer Economy</span>
+            </div>
+            <button class="view-btn" data-modal-trigger="huiminsheng-modal">
+              查看视频 <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1781,6 +1942,24 @@
       <button class="modal-close" data-close-modal>✕</button>
       <video src="心锁—心理剧.mp4" controls playsinline muted preload="metadata" poster="thumb-心锁—心理剧.jpg"></video>
       <p class="modal-caption">心锁—心理剧 · Drama Production</p>
+    </div>
+  </div>
+
+  <!-- Modal: 做好土特产大文章 -->
+  <div class="modal-overlay" id="tutechan-modal">
+    <div class="modal-content">
+      <button class="modal-close" data-close-modal>✕</button>
+      <video src="做好"土特产"大文章 加快农业农村现代化.mp4" controls playsinline muted preload="metadata" poster="thumb-做好土特产大文章.jpg"></video>
+      <p class="modal-caption">做好"土特产"大文章 加快农业农村现代化 · Policy News</p>
+    </div>
+  </div>
+
+  <!-- Modal: 惠民生 促消费 -->
+  <div class="modal-overlay" id="huiminsheng-modal">
+    <div class="modal-content">
+      <button class="modal-close" data-close-modal>✕</button>
+      <video src="惠民生 促消费.mp4" controls playsinline muted preload="metadata" poster="thumb-惠民生 促消费.jpg"></video>
+      <p class="modal-caption">惠民生 促消费 · Policy News</p>
     </div>
   </div>
 
